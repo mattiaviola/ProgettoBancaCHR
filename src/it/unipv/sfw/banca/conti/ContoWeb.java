@@ -50,20 +50,20 @@ public class ContoWeb extends Conto{
 		return "Password cambiata con successo!";
 	}
 	
-	public String operazione(double importo) {
+	public boolean operazione(double importo) {
 		if(this.loggato == false) {
-			return "Prima di fare operazioni devi fare il login!";
+			return false;
 		}else {
 			if(importo > 0) {
 				super.setSaldo(super.getSaldo() + importo);
-				return "Deposito effettuato con successo.";
+				return true;
 			}else if(importo < 0) {
 				if(importo <= super.getSaldo()) {
 					super.setSaldo(super.getSaldo() - importo);
-					return "Prelievo effettuato con successo.";
+					return true;
 				}
 			}
 		}
-		return "Impossibile completare l'operazione. Prova ad inserire un importo valido!";
+		return false;
 	}
 }

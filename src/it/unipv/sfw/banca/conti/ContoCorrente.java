@@ -6,16 +6,16 @@ public class ContoCorrente extends Conto{
 		super(p, iban);
 	}
 	
-	public String operazione(double importo) {
+	public boolean operazione(double importo) {
 		if(importo > 0) {
 			super.setSaldo(super.getSaldo() + importo);
-			return "Deposito effettuato con successo.";
+			return true;
 		}else if(importo < 0) {
 			if(importo <= super.getSaldo()) {
 				super.setSaldo(super.getSaldo() - importo);
-				return "Prelievo effettuato con successo.";
+				return true;
 			}
 		}
-		return "Impossibile completare l'operazione. Prova ad inserire un importo valido!";
+		return false;
 	}
 }

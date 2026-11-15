@@ -6,12 +6,12 @@ public class ContoDeposito extends Conto{
 		super(p, iban);
 	}
 	
-	public String operazione(double importo) {
+	public boolean operazione(double importo) {
 		if(importo <= 0) {
-			return "Impossibile prelevare da un conto deposito. Inserisci un importo valido!";
+			return false;
 		}else { 
 			super.setSaldo(super.getSaldo() + importo);
-			return "Deposito effettuato con successo.";
+			return true;
 		}
 	}
 }

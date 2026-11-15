@@ -14,6 +14,7 @@ public abstract class Conto {
 		this.intestatario = p;
 		this.iban = iban;
 		this.saldo = 0;
+		this.accountable = new ArrayList<Accountable>();
 	}
 	
 	@Override
@@ -53,5 +54,5 @@ public abstract class Conto {
 		this.accountable = accountable;
 	}
 	
-	public abstract String operazione(double importo);
+	public abstract boolean operazione(double importo);
 }
