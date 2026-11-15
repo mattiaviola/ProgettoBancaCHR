@@ -11,8 +11,8 @@ public class ContoCorrente extends Conto{
 			super.setSaldo(super.getSaldo() + importo);
 			return true;
 		}else if(importo < 0) {
-			if(importo <= super.getSaldo()) {
-				super.setSaldo(super.getSaldo() - importo);
+			if(-importo <= super.getSaldo()) {
+				super.setSaldo(super.getSaldo() + importo);
 				return true;
 			}
 		}

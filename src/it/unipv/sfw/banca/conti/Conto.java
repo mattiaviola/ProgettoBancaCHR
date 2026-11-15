@@ -19,7 +19,7 @@ public abstract class Conto {
 	
 	@Override
 	public String toString() {
-		return "Conto di: " + this.intestatario + " - IBAN: " + this.iban + " - Saldo: " + this.saldo;
+		return "Conto di: " + this.intestatario.getNome() + " " + this.intestatario.getCognome() + " - IBAN: " + this.iban + " - Saldo: " + this.saldo;
 	}
 
 	public Persona getIntestatario() {
